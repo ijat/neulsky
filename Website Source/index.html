@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NëulSký</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
+</head>
+
+<body>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"><img src="assets/img/neulsky-logo.png" width="100"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="jumbotron" id="jumbo1">
+                <h2 class="text-left"><strong>Nëul</strong>Ský​ </h2>
+                <p><strong>Nëul</strong>Ský​ is a real time weather monitoring system with neural network analysis to predict weather forecast. </p>
+                <p><a class="btn btn-success" role="button" href="#start" id="but1">start </a></p>
+            </div>
+            <section id="sec1" style="display:none;">
+                <div class="dropdown">
+                    <button class="btn btn-default btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">change NODE </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation" ><a id="n1" class="bg-primary" href="#">N1</a></li>
+                        <li role="presentation" ><a id="n2" class="" href="#">N2</a></li>
+                        <li role="presentation" ><a id="n3" class="" href="#">N3</a></li>
+                    </ul>
+                </div>
+ <!--               <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter </th>
+                                <th>Value </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div> -->
+                
+				<div  class="tbl-header">
+<table cellpadding="0" cellspacing="0" border="0">
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Values</th>
+    </tr>
+  </thead>
+</table>
+</div>
+<div  class="tbl-content">
+<table cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr>
+                                <td>Node </td>
+                                <td id="node">-</td>
+                            </tr>
+                            <tr>
+                                <td>Status </td>
+                                <td id="status">-</td><!-- <span class="label label-warning">Offline</span></td>-->
+                            </tr>
+							<tr>
+                                <td>Last Update</td>
+                                <td id="last">-</td>
+                            </tr>
+                            <tr>
+                                <td>Temperature</td>
+                                <td id="temp">-</td>
+                            </tr>
+							<tr>
+                                <td>Heat Index</td>
+                                <td id="heat">-</td>
+                            </tr>
+                            <tr>
+                                <td>Dew Point</td>
+                                <td id="dew">-</td>
+                            </tr>
+                            <tr>
+                                <td>Humidity</td>
+                                <td id="humid">-</td>
+                            </tr>
+                            <tr>
+                                <td>Pressure</td>
+                                <td id="pres">-</td>
+                            </tr>
+                            <tr>
+                                <td>Weather Prediction</td>
+                                <td id="pre">-</td>
+                            </tr>
+  </tbody>
+</table>
+</div>
+				
+				<button id="f5" class="btn btn-danger btn-block btn-xs" type="submit">Refresh </button>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 footer-navigation">
+                <h3><a href="#"><strong>Nëul</strong><span>Ský​ </span></a></h3>
+                <p class="company-name">© 2015 Ijat.my</p>
+            </div>
+            <div class="col-md-4 col-sm-6 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">Universiti Putra Malaysia</span>Serdang, Malaysia</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left">Telegram @neulskytech_bot </p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p>contact@neulsky.tech </p>
+                </div>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About This Project...</h4>
+                <p>This is a course project for ECC 3302 (Embedded Computer and Communications Systems Design).</p>
+		<p> To learn more about this project, visit <a href="https://ijat.my/bVK2K">ijat.my/neulsky_project</a>.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/index.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+<script type="text/javascript">
+	var node = 1;
+	var id, to;
+
+	$( "#but1" ).click(function() {
+		$("#jumbo1").hide();
+		$("#sec1").fadeIn();
+		to = setTimeout(update, 500);
+		id = setInterval(update, 2500);
+	});
+	
+	$( "#f5" ).click(function() {
+		nclick()
+		//i#earTimeout(to);
+		//#clearInterval(id);
+		//to = setTimeout(update, 500);
+		//id = setInterval(update, 2500);
+	});
+
+	$( "#n1" ).click(function() {
+		node=1;
+		nclick();
+	});
+
+        $( "#n2" ).click(function() {
+                node=2;
+		nclick();
+        });
+
+        $( "#n3" ).click(function() {
+                node=3;
+		nclick();
+        });
+
+	function nclick() {
+		clearTimeout(to);
+                clearInterval(id);
+                to = setTimeout(update, 500);
+                id = setInterval(update, 2500);
+	}
+	
+	function update() {
+		ehjex = $.ajax({
+			method: "GET",
+			url: "https://s5.ijat.my:4466/neulsky/getData/node/" + node,
+			dataType: 'json',
+			timeout: 20000
+		});
+		
+		ehjex.done(function( msg ) {
+		  console.log(msg);
+		  if (msg.status === 'online') {
+			$("#status").html('<span class="label label-success">Online</span>');
+			$("#node").html(msg.node);
+	                $("#temp").html(msg.temp + " °C");
+	                $("#heat").html(msg.heat + " °C");
+	                $("#dew").html(msg.dew + " °C");
+          		$("#humid").html(msg.humid + " %");
+        	        $("#last").html(msg.time);
+	                $("#pres").html(msg.pres + " millibars");
+        	        $("#pre").html((msg.wpre.dict=='not rain' ? 'No Rain':(msg.wpre.dict=='rain' ? 'Rain' : 'Not enough data')));
+		  } else {
+			$("#status").html('<span class="label label-warning">Offline</span>');
+			$("#node").html(node);
+			$("#temp").html("-");
+	                $("#heat").html("-");
+	                $("#dew").html("-");
+	                $("#humid").html("-");
+	                $("#last").html("-");
+	                $("#pres").html("-");
+	                $("#pre").html("-");
+		  }
+		});
+		
+		ehjex.fail(function( jqXHR, textStatus ) {
+		  console.log("Request failed: " + textStatus);
+		  $("#status").html('<span class="label label-warning">Offline</span>');
+		  $("#node").html(node);
+		  $("#temp").html("-");
+		  $("#heat").html("-");
+		  $("#dew").html("-");
+		  $("#humid").html("-");
+		  $("#last").html("-");
+		  $("#pres").html("-");
+		  $("#pre").html("-");
+		});
+	}
+</script>
+
+</html>

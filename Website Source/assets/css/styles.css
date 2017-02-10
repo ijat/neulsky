@@ -1,0 +1,68 @@
+div.col-md-12{
+  padding-top:10px;
+  background:rgba(0,0,0,.2);
+  text-align:right;
+}
+
+div.container-fluid{
+  margin-bottom:30px;
+  box-shadow:0px 3px 5px rgba(0,0,0,.5);
+}
+
+body{
+  background:url(../../assets/img/plain.jpg);
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+}
+
+div.container{
+  background:rgba(255,255,255,.5);
+  border-radius:3px;
+  max-width:700px;
+  padding:10px;
+}
+
+h1{
+  text-size:14px;
+  font-size:20px;
+}
+
+span.label.label-default{
+  width:10px;
+  height:10px;
+}
+
+div.dropdown{
+  margin-bottom:10px;
+}
+
+button.btn.btn-default{
+}
+
+button.btn.btn-danger.btn-block.btn-xs{
+  width:100px;
+  float:right;
+}
+
+@media (max-width:767px) {
+  div.container{
+    margin:20px;
+  }
+}
+
+div.well.well-sm{
+  background:none;
+}
+
+#jumbo1 {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
